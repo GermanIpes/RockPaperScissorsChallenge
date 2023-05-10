@@ -1,0 +1,9 @@
+build
+out
+target
+.gradle
+.idea
+.DS_Store
+*.iml
+*.run
+local-config.env
