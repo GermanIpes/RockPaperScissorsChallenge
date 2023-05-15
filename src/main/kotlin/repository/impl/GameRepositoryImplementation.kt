@@ -10,18 +10,18 @@ class GameRepositoryImplementation: GameRepository {
     }
 
     override fun getPlayer(playerNumber: Int): PlayerValue {
-        return if (playerNumber == 1) player1!!
-        else player2!!
+        return if (playerNumber == 1) player1
+        else player2
     }
 
     override fun deleteAllPlayers() {
-        player1 = null
-        player2 = null
+        player1 = PlayerValue(1, null)
+        player2 = PlayerValue(2, null)
     }
 
 
     companion object{
-        var player1: PlayerValue? = null
-        var player2: PlayerValue? = null
+        var player1: PlayerValue = PlayerValue(1, null)
+        var player2: PlayerValue = PlayerValue(2, null)
     }
 }

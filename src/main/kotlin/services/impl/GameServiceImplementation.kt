@@ -15,7 +15,7 @@ data class GameServiceImplementation(
         return if (computer1.gameValue == computer2.gameValue) {
             GameResult.DRAW
         } else {
-            val gameResult = evaluateGameResult(computer1.gameValue, computer2.gameValue)
+            val gameResult = evaluateGameResult(computer1.gameValue!!, computer2.gameValue!!)
             if (gameResult) GameResult.FIRST_COMPUTER_WINS
             else GameResult.SECOND_COMPUTER_WINS
         }
