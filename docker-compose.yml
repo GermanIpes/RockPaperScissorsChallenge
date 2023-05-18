@@ -7,6 +7,6 @@ services:
     volumes:
       - ./:/RockPaperScissorsChallenge
     ports:
-      - "79:79"
+      - "8080:80"
     expose:
       - 8080

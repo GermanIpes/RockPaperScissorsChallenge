@@ -4,4 +4,4 @@ RUN apk add --no-cache bash
 
 WORKDIR /RockPaperScissorsChallenge
 
-CMD chmod +x ./gradlew run
+CMD ./gradlew run
