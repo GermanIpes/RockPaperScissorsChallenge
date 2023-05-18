@@ -3,7 +3,7 @@ package modules
 import io.javalin.Javalin
 
 object HttpServer {
-    const val PORT = 70
+    const val PORT = 80
 
     fun start(controllerModule: ControllerModule) {
         Javalin.create { config ->
