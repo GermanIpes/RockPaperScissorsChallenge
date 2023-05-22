@@ -9,20 +9,19 @@ import services.GameService
 data class GameServiceImplementation(
     val db: GameRepository
 ): GameService {
-    override fun startGame(): GameResult {
+    override fun startGame(): Int {
         val computer1 = db.getPlayer(playerNumber = 1)
         val computer2 = db.getPlayer(playerNumber = 2)
         return if (computer1.gameValue == computer2.gameValue) {
-            GameResult.DRAW
+            GameResult.DRAW.value
         } else {
             val gameResult = evaluateGameResult(computer1.gameValue!!, computer2.gameValue!!)
-            if (gameResult) GameResult.FIRST_COMPUTER_WINS
-            else GameResult.SECOND_COMPUTER_WINS
+            if (gameResult) GameResult.FIRST_COMPUTER_WINS.value
+            else GameResult.SECOND_COMPUTER_WINS.value
         }
     }
 
     override fun postPlayer(player: PlayerValue) {
-        println("The request has arrived!")
         db.postPlayer(player)
     }
 
