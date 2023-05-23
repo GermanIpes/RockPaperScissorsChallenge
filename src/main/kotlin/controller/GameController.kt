@@ -32,6 +32,7 @@ class GameController(
     private fun postPlayer(ctx: Context){
         val mapper = jacksonObjectMapper()
         val player = mapper.readValue(ctx.body(), PlayerValue::class.java)
+        println("The player with id:${player.playerNumber} is being processed")
         ctx.json(gameService.postPlayer(player))
     }
 
